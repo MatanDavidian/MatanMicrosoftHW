@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.106
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "Matan_resource_group", "Matan_resource_group\Matan_resource_group.deployproj", "{377FBB12-4A35-4D57-BEBE-806C72391D90}"
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "Matan", "Matan_resource_group\Matan.deployproj", "{377FBB12-4A35-4D57-BEBE-806C72391D90}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

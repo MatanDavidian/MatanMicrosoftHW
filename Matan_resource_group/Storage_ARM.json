@@ -2,7 +2,7 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "SourceStorageType": {
+    "source2021Type": {
       "type": "string",
       "defaultValue": "Standard_LRS",
       "allowedValues": [
@@ -13,7 +13,7 @@
         "Premium_LRS"
       ]
     },
-    "DestStorageType": {
+    "dest2021Type": {
       "type": "string",
       "defaultValue": "Standard_LRS",
       "allowedValues": [
@@ -23,38 +23,48 @@
         "Standard_RAGRS",
         "Premium_LRS"
       ]
-    }},
+    }
+    
+    
+    },
   "variables": {
-    "SourceStorageName": "[concat('SourceStorage', uniqueString(resourceGroup().id))]",
-    "DestStorageName": "[concat('DestStorage', uniqueString(resourceGroup().id))]"},
+    "source2021Name": "[concat('source2021', uniqueString(resourceGroup().id))]",
+    "dest2021Name": "[concat('dest2021', uniqueString(resourceGroup().id))]"
+    
+    
+    },
   "resources": [
     {
-      "name": "[variables('SourceStorageName')]",
+      "name": "[variables('source2021Name')]",
       "type": "Microsoft.Storage/storageAccounts",
       "location": "[resourceGroup().location]",
       "apiVersion": "2016-01-01",
       "sku": {
-        "name": "[parameters('SourceStorageType')]"
+        "name": "[parameters('source2021Type')]"
       },
       "dependsOn": [ ],
       "tags": {
-        "displayName": "SourceStorage"
+        "displayName": "source2021"
       },
       "kind": "Storage"
     },
     {
-      "name": "[variables('DestStorageName')]",
+      "name": "[variables('dest2021Name')]",
       "type": "Microsoft.Storage/storageAccounts",
       "location": "[resourceGroup().location]",
       "apiVersion": "2016-01-01",
       "sku": {
-        "name": "[parameters('DestStorageType')]"
+        "name": "[parameters('dest2021Type')]"
       },
       "dependsOn": [ ],
       "tags": {
-        "displayName": "DestStorage"
+        "displayName": "dest2021"
       },
       "kind": "Storage"
-    }],
+    }
+    
+    
+    ],
   "outputs": {}
 }
+
